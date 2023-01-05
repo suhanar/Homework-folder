@@ -89,12 +89,12 @@ topMenuEl.addEventListener('click',function(e){
         return;
      }
   //console.log(topMenuLinks[0]);
-     for(let i in topMenuLinks){
+    // for(let i in topMenuLinks){
     //    topMenuLinks[i].classList.remove('active');
     //    e.target.classList.remove('active');
         
         
-       }
+      // }
        e.target.classList.add('active');
 
     let links=[];
@@ -182,6 +182,9 @@ topMenuEl.addEventListener('click',function(e){
   e.preventDefault();
   if(e.target.text == 'about'){
     mainEl.innerHTML = `<h1>${e.target.text}</h1>`
+  }
+  else{
+    mainEl.innerHTML = '<h1>SEI Rocks!</h1>';
   }
   
 
