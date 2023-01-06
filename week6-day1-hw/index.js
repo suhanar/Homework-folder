@@ -1,5 +1,5 @@
-//const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0]
-const nums = [2,5,3,4,7,9,8,10,1,0,6]
+const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0]
+//const nums = [2,5,3,4,7,9,8,10,1,0,6]
 
 const panagram = ['The', 'quick', 'brown', 'fox', 'jumps', 'over', 'the', 'lazy', 'dog']
 
