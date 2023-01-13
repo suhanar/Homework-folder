@@ -1,4 +1,6 @@
 //let prompt = require('prompt-sync')();
+//document.getElementById('body').style.backgroundColor = "black";
+//document.getElementById('body').style.backgroundImage = url('alien.jpg');
 
 
 class USAssembly {
@@ -95,23 +97,21 @@ const attackAlien = () => {
 const gameStart = () =>{
     //turn for the soldier
 
-    if(alien1.shipArr.length === 0 ){
-        alert('Aliens all died you win!!!!!!!');
-        exit();
-        }
+   
 
 
-        if(soldier.hull === 0){
-            console.log('Your ship defeated!!!!!!!!!!GAME OVER');
-            exit();
-        }
+        
 
    let arr = alien1.shipArr.length;
    //console.log('array length',arr);
    //let soldierDead = false;
    
     soldier.attack(alien1.shipArr[0]);
-
+    // if(alien1.shipArr.length <= 1 ){
+    //     alert('Aliens all died you win!!!!!!!');
+    //     exit();
+    //     }
+    //     else{
    
     if(alien1.shipArr[0].hull < 0){
         alien1.shipArr.shift();
@@ -121,13 +121,17 @@ const gameStart = () =>{
         alert(`Successfull you defeat alien`);
         console.log('array length',arr);
         currentStatus();
-     
+
+        
+    
         
     }
+
     
     else{
         alert('The Alien is alive')
     }
+//}
 
     console.log(soldier.hull);
 
@@ -144,6 +148,11 @@ if(soldier.hull < 0 ){
     //break;
     
     currentStatus();
+
+    if(soldier.hull === 0){
+        alert('Your ship defeated!!!!!!!!!!GAME OVER');
+        exit();
+    }
 }
 
 

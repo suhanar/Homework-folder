@@ -84,6 +84,7 @@ const attackAlien = () => {
         //callGame();
         gameStart();
         attackAlien();
+       
     }
     else{
         exit();
@@ -98,7 +99,11 @@ const gameStart = () =>{
 
    let arr = alien1.shipArr.length;
    //console.log('array length',arr);
-   //let soldierDead = false;
+   let soldierDead = false;
+   let s = soldier.hull;
+   while(arr>0){
+
+   
    
     soldier.attack(alien1.shipArr[0]);
 
@@ -110,13 +115,14 @@ const gameStart = () =>{
        // for(let k=0;k<alien1.shipArr.length;k++){
         console.log(`Successfull you defeat alien`);
         console.log('array length',arr);
-        //break;
+        
+        break;
        // }
        
-       if(alien1.shipArr.length === 0 ){
-        console.log('Aliens all died you win!!!!!!!');
-        exit();
-        }
+    //    if(alien1.shipArr.length === 0 ){
+    //     console.log('Aliens all died you win!!!!!!!');
+    //     exit();
+    //     }
         
     }
     
@@ -124,69 +130,47 @@ const gameStart = () =>{
         console.log('The Alien is alive')
     }
 
-    
-
-
     console.log(soldier.hull);
 
-   
         alien1.shipArr[0].attack(soldier);
-    
-    
-//console.log('soldier defeated');
-if(soldier.hull < 0 ){
+ 
+if(soldier.hull <= 0 ){
     
     console.log(`Aliens defeted you!!!!`);
    
     soldier.hull = 0;
-    //soldierDead = true;
-    //break;
-    // if(soldier.hull === 0){
-    //     console.log('Your ship defeated!!!!!!!!!!GAME OVER');
-    //     exit();
-    // }
+    soldierDead=true;
+    break;
+    
 }
 
+   }
+  arr--;
+ winner();
+
+   }
 
 
-
-
+   const winner = () => {
+    let arr = alien1.shipArr.length;
+    if(arr===0){
+        winnerSoldier();
+        exit();
+      }
+      if(soldier.hull == 0){
+        winnerAlien();
+        exit();
+      }
    }
    
 
 
-const winner = () => {
-
-
-   
-        // else{
-        //     console.log('You defeated!!!!!!!!!!Game Over');
-        //     exit();
-        // }
-
-    // if(soldier.hull >= 0 || alien1.shipArr.length ==0) {
-    //     console.log('We win')
-    // }
-    // else{
-    //     console.log('we loose')
-    // }
-    // if(soldier.hull == 0 && alien1.shipArr.length > 0){
-    //     console.log('Soldier died')
-    // }
-    // //if(alien1.shipArr.length === 0 && soldier.hull>0)
-    // else if(alien1.shipArr.length === 0 && soldier.hull>0){
-    //     console.log('Congrats we killed all ship');
-    // }
-    // else {
-    //     console.log('Tie');
-    // }
+const winnerSoldier = () => {
+    console.log('Aliens all dead You win !!!!!!')
+};
+const winnerAlien = () => {
+    console.log('You are Dead GAME OVER!!!!!!!!!')
 }
-
-// const winnerCall = () => {
-//     if (soldier.hull <= 0 || alien1.shipArr.length === 0) {
-//       winner();
-//     }
-//   };
    
 
 
@@ -210,6 +194,7 @@ const start = ()=>{
     
 
 }
+
 
 start();
 
